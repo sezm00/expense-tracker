@@ -1,7 +1,13 @@
 import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    axios.get('http://localhost:5000/').then(res => console.log(res.data))
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
